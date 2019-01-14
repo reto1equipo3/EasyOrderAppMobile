@@ -12,17 +12,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".StartActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignInActivity"  android:screenOrientation="portrait"></activity>
-        <activity android:name=".SignUpActivity"  android:screenOrientation="portrait"></activity>
-        <activity android:name=".UserViewActivity"  android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".SignInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UserViewActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity_orders" />
+        <activity android:name=".activity_new_order" />
+        <activity android:name=".activity_order_confirmation"></activity>
     </application>
 
 </manifest>

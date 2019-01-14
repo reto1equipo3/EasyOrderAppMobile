@@ -59,7 +59,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        imgUserPhoto = findViewById(R.id.imgUserPhoto);
         btnSignUp = findViewById(R.id.btnSignUp);
         hpTermsConditions = findViewById(R.id.hpTermsConditions);
         txtClickHere = findViewById(R.id.txtClickHere);
