@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -39,8 +41,11 @@ public class UserViewActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         navigationView.getMenu().getItem(0).setChecked(false);
-        Fragment f = new UserViewFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.content_main , f).commit();
+
+        if(savedInstanceState == null){
+            setFragment(0);
+        }
+
     }
 
 
@@ -143,7 +148,24 @@ public class UserViewActivity extends AppCompatActivity
         return true;
     }
 
+    public void setFragment(int option){
+        //Cargar fragment
+        FragmentManager fragmentManager;
+        fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction;
+        fragmentTransaction = fragmentManager.beginTransaction();
 
+        switch(option){
+            case 0:
+                UserViewFragment userViewFragment = new UserViewFragment();
+                fragmentTransaction.replace(R.id.fragment, userViewFragment);
+                break;
+        }
+
+        //Añadir fragment a la cola
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
     @Override
     public void onFragmentInteraction(Uri uri) {

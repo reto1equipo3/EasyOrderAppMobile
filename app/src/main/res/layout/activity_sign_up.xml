@@ -14,7 +14,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
@@ -23,28 +22,30 @@
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCVV"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="518dp" />
 
     <EditText
         android:id="@+id/txtCVV"
         android:layout_width="262dp"
-        android:layout_height="30dp"
+        android:layout_height="25dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter CVV"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtCardholderName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCreditCard"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -54,17 +55,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Credit Card"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtCVV"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddress"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -76,15 +78,19 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Address"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtCreditCard"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTown"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -94,7 +100,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
@@ -103,9 +108,10 @@
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPostalCode"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="341dp" />
 
     <EditText
         android:id="@+id/txtPostalCode"
@@ -114,17 +120,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Postal Code"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtTown"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPhoneNumber"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -134,17 +141,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Phone Number"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtPostalCode"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwdConfirmPassword"
         tools:ignore="MissingConstraints" />
 
     <CheckBox
@@ -153,16 +161,14 @@
         android:layout_height="22dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:layout_toStartOf="@+id/hpTermsConditions"
         android:text="I agree to the"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCardholderName"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -172,6 +178,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="24dp"
         android:clickable="true"
         android:linksClickable="true"
@@ -179,25 +186,24 @@
         android:textColor="#3399ff"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCardholderName"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnSignUp"
-        android:layout_width="199dp"
-        android:layout_height="29dp"
+        android:layout_width="223dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/boton_redondeado"
         android:text="Sign Up"
         android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hpTermsConditions" />
+        app:layout_constraintTop_toBottomOf="@+id/chkAgree" />
 
     <TextView
         android:id="@+id/txtAlreadyRegistered"
@@ -244,16 +250,18 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Login"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtFullName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="33dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/txtFullName"
@@ -261,18 +269,19 @@
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Full Name"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLogin"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -281,19 +290,19 @@
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Email"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/pwdPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFullName"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -302,19 +311,19 @@
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/pwdConfirmPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -324,18 +333,18 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/txtfield_redondeado"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtPhoneNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwdPassword"
         tools:ignore="MissingConstraints" />
 
     <!--tools:layout_editor_absoluteX="26dp"

@@ -44,7 +44,7 @@ public class activity_orders extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-
+    /*
     private static final int INTERVALO = 2000; //2 segundos para salir
     private long tiempoPrimerClick;
 
@@ -57,5 +57,5 @@ public class activity_orders extends AppCompatActivity implements View.OnClickLi
             Toast.makeText(this, "\n" + "Press again to exit", Toast.LENGTH_SHORT).show();
         }
         tiempoPrimerClick = System.currentTimeMillis();
-    }
+    }*/
 }

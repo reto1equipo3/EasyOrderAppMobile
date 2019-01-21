@@ -16,14 +16,18 @@ public class UserBean implements Serializable {
     private String login;
     private String email;
     private String fullName;
+    private String phoneNumber;
+    private String postalCode;
+    private String town;
+    private String address;
+    private String creditCard;
+    private String cvv;
+    private String cardholderName;
     private UserStatus status;
     private UserPrivilege privilege;
     private String password;
-    private Timestamp lastAcess;
+    private Timestamp lastAccess;
     private Timestamp lastPasswordChange;
-    private Image photo;
-
-
 
     //Getter and setters
     public Integer getId() {
@@ -54,16 +58,40 @@ public class UserBean implements Serializable {
         return password;
     }
 
-    public Timestamp getLastAcess() {
-        return lastAcess;
+    public Timestamp getLastAccess() {
+        return lastAccess;
     }
 
     public Timestamp getLastPasswordChange() {
         return lastPasswordChange;
     }
 
-    public Image getPhoto() {
-        return photo;
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCreditCard() {
+        return creditCard;
+    }
+
+    public String getCvv() {
+        return cvv;
+    }
+
+    public String getCardholderName() {
+        return cardholderName;
     }
 
     public void setId(Integer id) {
@@ -94,16 +122,40 @@ public class UserBean implements Serializable {
         this.password = password;
     }
 
-    public void setLastAcess(Timestamp lastAcess) {
-        this.lastAcess = lastAcess;
+    public void setLastAccess(Timestamp lastAccess) {
+        this.lastAccess = lastAccess;
     }
 
     public void setLastPasswordChange(Timestamp lastPasswordChange) {
         this.lastPasswordChange = lastPasswordChange;
     }
 
-    public void setPhoto(Image photo) {
-        this.photo = photo;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setCreditCard(String creditCard) {
+        this.creditCard = creditCard;
+    }
+
+    public void setCvv(String cvv) {
+        this.cvv = cvv;
+    }
+
+    public void setCardholderName(String cardholderName) {
+        this.cardholderName = cardholderName;
     }
 
     //Constructor
@@ -115,15 +167,40 @@ public class UserBean implements Serializable {
         this.status = status;
         this.privilege = privilege;
         this.password = password;
-        this.lastAcess = lastAcess;
+        this.lastAccess = lastAccess;
         this.lastPasswordChange = lastPasswordChange;
-        this.photo = photo;
+        this.phoneNumber = phoneNumber;
+        this.postalCode = postalCode;
+        this.town = town;
+        this.address = address;
+        this.creditCard = creditCard;
+        this.cvv = cvv;
+        this.cardholderName = cardholderName;
     }
 
-    public UserBean(String login, String email, String password) {
+    /*public UserBean(String login, String email, String password) {
         this.login = login;
         this.email = email;
         this.password = password;
+    }*/
+
+    public UserBean(Integer id, String login, String email, String fullName, String phoneNumber, String postalCode, String town, String address, String creditCard, String cvv, String cardholderName, UserStatus status, UserPrivilege privilege, String password, Timestamp lastAccess, Timestamp lastPasswordChange) {
+        this.id = id;
+        this.login = login;
+        this.email = email;
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.postalCode = postalCode;
+        this.town = town;
+        this.address = address;
+        this.creditCard = creditCard;
+        this.cvv = cvv;
+        this.cardholderName = cardholderName;
+        this.status = status;
+        this.privilege = privilege;
+        this.password = password;
+        this.lastAccess = lastAccess;
+        this.lastPasswordChange = lastPasswordChange;
     }
 
     public UserBean(String s, String toString) {

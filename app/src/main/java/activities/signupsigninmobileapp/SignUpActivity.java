@@ -36,19 +36,22 @@ import exceptions.LoginExistingException;
  */
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private static final int PICK_IMAGE = 0;
-    ImageButton imgUserPhoto;
     EditText txtFullName;
     EditText txtLogin;
     EditText txtEmail;
     EditText pwdPassword;
     EditText pwdConfirmPassword;
+    EditText txtPhoneNumber;
+    EditText txtPostalCode;
+    EditText txtTown;
+    EditText txtAddress;
+    EditText txtCreditCard;
+    EditText txtCVV;
+    EditText txtCardholderName;
     CheckBox chkAgree;
     TextView hpTermsConditions;
     Button btnSignUp;
     TextView txtClickHere;
-    byte[] bArray;
-    Blob my_blob = null;
 
     /**
      * Method to display de view
@@ -61,41 +64,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         btnSignUp = findViewById(R.id.btnSignUp);
         hpTermsConditions = findViewById(R.id.hpTermsConditions);
-        txtClickHere = findViewById(R.id.txtClickHere);
 
-        imgUserPhoto.setOnClickListener(this);
+        txtClickHere = findViewById(R.id.txtClickHere);
         btnSignUp.setOnClickListener(this);
         hpTermsConditions.setOnClickListener(this);
         txtClickHere.setOnClickListener(this);
 
 
-    }
-
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        Bitmap oBitmap;
-        InputStream oInputStream;
-
-        super.onActivityResult(requestCode,resultCode,data);
-
-        if(resultCode == Activity.RESULT_OK && requestCode == PICK_IMAGE){
-            if(data == null){
-                Toast.makeText(this,getResources().getString(R.string.Error), Toast.LENGTH_LONG).show();
-                return;
-            }
-            try {
-                oInputStream = this.getApplicationContext().getContentResolver().openInputStream(data.getData());
-                oBitmap = BitmapFactory.decodeStream( oInputStream );
-                imgUserPhoto.setImageBitmap(oBitmap);
-
-                ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                oBitmap.compress(Bitmap.CompressFormat.PNG, 100, bos);
-                bArray = bos.toByteArray();
-                my_blob.setBytes(1,bArray);
-            } catch (Exception e) {
-                Toast.makeText( this, getResources().getString(R.string.Exception), Toast.LENGTH_LONG).show();
-            }
-        }
     }
 
     /**
@@ -111,6 +86,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     protected final int MAX_LENGTH_EMAIL = 50;
     protected final int MAX_LENGTH_LOGIN = 20;
     protected final int MAX_LENGTH_PASSWORD = 15;
+    protected final int MAX_LENGTH_CREDIT_CARD = 16;
+    protected final int MAX_LENGTH_CVV = 3;
+    protected final int MAX_LENGTH_CARDHOLDER_NAME = 100;
 
     /**
      * Method for validating fullname.
@@ -229,6 +207,128 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
 
     /**
+     * Method for validating the phone number
+     *
+     * @param phoneNumber Phone number to validate
+     * @throws IllegalArgumentException The phone number is not valid
+     */
+    private void validatePhoneNumber(String phoneNumber){
+        String PHONE_PATTERN = "[6]{1}[0-9]{8}";
+        Pattern pattern = Pattern.compile(PHONE_PATTERN);
+
+        if(!pattern.matcher(phoneNumber).matches() || phoneNumber.trim().length() > 9){
+            Toast.makeText(this, "Invalid phone number format.", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Invalid phone number format.");
+        }
+    }
+
+    /**
+     * Method for validating the postal code
+     *
+     * @param postalCode Postal code to validate
+     * @throws IllegalArgumentException The postal code is not valid
+     */
+    private void validatePostalCode(String postalCode){
+        String CODE_PATTERN = "[4]{1}[0-9]{4}";
+        Pattern pattern = Pattern.compile(CODE_PATTERN);
+
+        if(!pattern.matcher(postalCode).matches() || postalCode.trim().length() > 5){
+            Toast.makeText(this, "Invalid postal code format.", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Invalid postal code format.");
+        }
+    }
+
+    /**
+     * Method for valldating the town
+     * @param town Town to validate
+     * @throws IllegalArgumentException The town is not valid
+     */
+    private void validateTown(String town){
+        String TOWN_PATTERN = "[a-zA-Z]+";
+        Pattern pattern = Pattern.compile(TOWN_PATTERN);
+
+        if (town == null || town.trim().equals("")) {
+            Toast.makeText(this,"Field can not be empty.", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Field can not be empty.");
+        }
+
+        if (town.trim().length() >= MAX_LENGTH_FULLNAME) {
+            Toast.makeText(this,"Town is too long", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Town is too long.");
+        }
+
+        if (!pattern.matcher(town).matches()) {
+            Toast.makeText(this,"Town can only be composed of uppercase and lowercase letters.", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Town can only be composed of " + "uppercase or lowercase letters.");
+        }
+    }
+
+    /**
+     * Method for validating the address
+     * @param address Address to validate
+     * @throws IllegalArgumentException Address is not valid
+     */
+    private void validateAddress(String address){
+        String ADDRESS_PATTERN = "[a-zA-Z]+ [0-9]{2} [0-9][a-zA-Z]";
+        Pattern pattern = Pattern.compile(ADDRESS_PATTERN);
+
+        if(!pattern.matcher(address).matches() || address.trim().length() > MAX_LENGTH_FULLNAME){
+            Toast.makeText(this, "Invalid address format.", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Invalid address format.");
+        }
+    }
+
+    /**
+     * Method for validating the credit card
+     * @param creditCard
+     * @throws IllegalArgumentException Credit card is not valid
+     */
+    private void validateCreditCard(String creditCard){
+        String CARD_PATTERN = "[0-9]{16}";
+        Pattern pattern = Pattern.compile(CARD_PATTERN);
+
+        if(!pattern.matcher(creditCard).matches() && creditCard.trim().length() > MAX_LENGTH_CREDIT_CARD){
+            Toast.makeText(this, "Invalid credit card format.", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Invalid credit card format.");
+        }
+    }
+
+    /**
+     * Method for validating the CVV
+     * @param cvv
+     * @throws IllegalArgumentException CVV is not valid
+     */
+    private void validateCVV(String cvv){
+        String CVV_PATTERN = "[0-9]{3}";
+        Pattern pattern = Pattern.compile(CVV_PATTERN);
+
+        if(!pattern.matcher(cvv).matches() && cvv.trim().length() > MAX_LENGTH_CVV){
+            Toast.makeText(this, "Invalid CVV format.", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Invalid CVV format.");
+        }
+    }
+
+    private void validateCardholderName(String cardholderName){
+        String CARDHOLDER_PATTERN = "[a-zA-Z]+";
+        Pattern pattern = Pattern.compile(CARDHOLDER_PATTERN);
+
+        if (cardholderName == null || cardholderName.trim().equals("")) {
+            Toast.makeText(this,"Field can not be empty.", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Field can not be empty.");
+        }
+
+        if (cardholderName.trim().length() >= MAX_LENGTH_CARDHOLDER_NAME) {
+            Toast.makeText(this,"Cardholder name is too long", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Cardholder name is too long.");
+        }
+
+        if (!pattern.matcher(cardholderName).matches()) {
+            Toast.makeText(this,"Cardholder name can only be composed of uppercase and lowercase letters.", Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Cardholder name can only be composed of " + "uppercase or lowercase letters.");
+        }
+    }
+
+    /**
      * Opens Sign In window.
      */
     private void openSignInWindow() {
@@ -245,11 +345,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        if(imgUserPhoto.isPressed()){
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            intent.setType("image/*");
-            startActivityForResult(intent, PICK_IMAGE);
-        } else if(txtClickHere.isPressed()){
+        if(txtClickHere.isPressed()){
             Intent intent = new Intent(this,SignInActivity.class);
             startActivity(intent);
             finish();
@@ -313,6 +409,83 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
             validFields = false;
         }
+        //  Validate phone number
+        try{
+            validatePhoneNumber(txtPhoneNumber.getText().toString());
+        } catch (IllegalArgumentException e){
+            LOGGER.log(Level.SEVERE, "Sign Up controller::handleSignUpAction: {0}", e.getMessage());
+
+            txtPhoneNumber.setBackgroundColor(Color.RED);
+            txtPhoneNumber.requestFocus();
+
+            validFields = false;
+        }
+        //  Validate postal code
+        try{
+            validatePostalCode(txtPostalCode.getText().toString());
+        } catch (IllegalArgumentException e){
+            LOGGER.log(Level.SEVERE, "Sign Up controller::handleSignUpAction: {0}", e.getMessage());
+
+            txtPostalCode.setBackgroundColor(Color.RED);
+            txtPostalCode.requestFocus();
+
+            validFields = false;
+        }
+        //  Validate town
+        try{
+            validateTown(txtTown.getText().toString());
+        } catch (IllegalArgumentException e){
+            LOGGER.log(Level.SEVERE, "Sign Up controller::handleSignUpAction: {0}", e.getMessage());
+
+            txtTown.setBackgroundColor(Color.RED);
+            txtTown.requestFocus();
+
+            validFields = false;
+        }
+        //  Validate address
+        try{
+            validateAddress(txtAddress.getText().toString());
+        } catch (IllegalArgumentException e){
+            LOGGER.log(Level.SEVERE, "Sign Up controller::handleSignUpAction: {0}", e.getMessage());
+
+            txtAddress.setBackgroundColor(Color.RED);
+            txtAddress.requestFocus();
+
+            validFields = false;
+        }
+        //  Validate credit card
+        try{
+            validateCreditCard(txtCreditCard.getText().toString());
+        } catch (IllegalArgumentException e){
+            LOGGER.log(Level.SEVERE, "Sign Up controller::handleSignUpAction: {0}", e.getMessage());
+
+            txtCreditCard.setBackgroundColor(Color.RED);
+            txtCreditCard.requestFocus();
+
+            validFields = false;
+        }
+        //  Validate CVV
+        try{
+            validateCVV(txtCVV.getText().toString());
+        } catch (IllegalArgumentException e){
+            LOGGER.log(Level.SEVERE, "Sign Up controller::handleSignUpAction: {0}", e.getMessage());
+
+            txtCVV.setBackgroundColor(Color.RED);
+            txtCVV.requestFocus();
+
+            validFields = false;
+        }
+        //  Validate cardholder name
+        try{
+            validateCardholderName(txtCardholderName.getText().toString());
+        } catch (IllegalArgumentException e){
+            LOGGER.log(Level.SEVERE, "Sign Up controller::handleSignUpAction: {0}", e.getMessage());
+
+            txtCardholderName.setBackgroundColor(Color.RED);
+            txtCardholderName.requestFocus();
+
+            validFields = false;
+        }
         // If all fields are filled correctly sign up the user
         if (validFields) {
             UserBean user = new UserBean();
@@ -320,7 +493,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             user.setEmail(txtEmail.getText().toString());
             user.setLogin(txtLogin.getText().toString());
             user.setPassword(pwdPassword.getText().toString());
-            //user.setUserPhoto(my_blob);
+            user.setPhoneNumber(txtPhoneNumber.getText().toString());
+            user.setPostalCode(txtPostalCode.getText().toString());
+            user.setTown(txtTown.getText().toString());
+            user.setAddress(txtAddress.getText().toString());
+            user.setCreditCard(txtCreditCard.getText().toString());
+            user.setCvv(txtCVV.getText().toString());
+            user.setCardholderName(txtCardholderName.getText().toString());
 
             Logic logic = new LogicFactory().createLogicImplementation(LogicFactory.USER_CLIENT_TYPE);
 

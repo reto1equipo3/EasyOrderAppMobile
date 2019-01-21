@@ -18,24 +18,22 @@
         android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintHorizontal_bias="0.721"
         app:layout_constraintStart_toEndOf="@+id/btnCancel"
-        app:layout_constraintTop_toBottomOf="@+id/btnChangeCreditCard"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tableCreditAddress" />
 
     <Button
         android:id="@+id/btnCancel"
         android:layout_width="131dp"
         android:layout_height="44dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Cancel"
         android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnChangeAddress"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tableCreditAddress" />
 
     <TextView
         android:id="@+id/txtOrderConfirmation"
@@ -44,28 +42,28 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:paddingLeft="50dp"
         android:text="Order Confirmation"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tableOrder"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableOrder"
         android:layout_width="338dp"
-        android:layout_height="273dp"
+        android:layout_height="377dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginBottom="216dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrderConfirmation"
+        app:layout_constraintVertical_bias="0.0">
 
         <TableRow>
 
@@ -109,41 +107,20 @@
     </TableLayout>
 
     <TableLayout
-        android:id="@+id/tableCreditCard"
+        android:id="@+id/tableCreditAddress"
         android:layout_width="342dp"
-        android:layout_height="60dp"
+        android:layout_height="92dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableOrder">
+        app:layout_constraintTop_toBottomOf="@+id/tableOrder"
+        app:layout_constraintVertical_bias="0.21">
 
     </TableLayout>
-
-    <Button
-        android:id="@+id/btnChangeAddress"
-        android:layout_width="128dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="8dp"
-        android:text="Change Address"
-        android:textSize="9dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableCreditCard" />
-
-    <Button
-        android:id="@+id/btnChangeCreditCard"
-        android:layout_width="128dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="48dp"
-        android:text="Change Credit Card"
-        android:textSize="9dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintStart_toEndOf="@+id/btnChangeAddress"
-        app:layout_constraintTop_toBottomOf="@+id/tableCreditCard" />
 
 </android.support.constraint.ConstraintLayout>

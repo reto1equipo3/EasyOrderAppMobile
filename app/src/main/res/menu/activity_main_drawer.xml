@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_userdata"
             android:title="User Data" />
         <item
+            android:id="@+id/OrdersOption"
+            android:icon="@drawable/ic_shopping"
+            android:title="Your Orders"/>
+        <item
             android:id="@+id/logOutOption"
             android:icon="@drawable/ic_exit"
             android:title="Log Out" />
