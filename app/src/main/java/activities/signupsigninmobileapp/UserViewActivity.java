@@ -102,12 +102,41 @@ public class UserViewActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        int id = item.getItemId();
 
-        Fragment fragment = null;
-        boolean fragmentSelect = false;
+        if(id == R.id.userDataOption){
+            setFragment(0);
+        } else if(id == R.id.OrdersOption){
+            setFragment(1);
+        } else if(id == R.id.logOutOption){
+            setFragment(2);
+        } else if(id == R.id.nav_share){
+            setFragment(3);
+        }
 
-        switch (item.getItemId()) {
-            case R.id.logOutOption:
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+
+    }
+
+    public void setFragment(int option){
+        //Cargar fragment
+        FragmentManager fragmentManager;
+        fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction;
+        fragmentTransaction = fragmentManager.beginTransaction();
+
+        switch(option){
+            case 0:
+                UserViewFragment userViewFragment = new UserViewFragment();
+                fragmentTransaction.replace(R.id.fragment, userViewFragment);
+                break;
+            case 1:
+                activity_orders_fragment activityOrdersFragment = new activity_orders_fragment();
+                fragmentTransaction.replace(R.id.fragment, activityOrdersFragment);
+                break;
+            case 2:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
                 builder.setTitle("Warning").setMessage("Are you sure that you want to exit?").setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -125,40 +154,11 @@ public class UserViewActivity extends AppCompatActivity
                 });
                 builder.show();
                 break;
-
-            case R.id.userDataOption:
-                fragment = new UserViewFragment();
-                fragmentSelect = true;
-
-                break;
-
-            case R.id.nav_share:
+            case 3:
                 Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
                 shareIntent.setType("text/pain");
                 shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,"My app");
                 startActivity(Intent.createChooser(shareIntent,"Share via"));
-                break;
-        }
-
-        if(fragmentSelect==true){
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_main,fragment ).commit();
-        }
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    public void setFragment(int option){
-        //Cargar fragment
-        FragmentManager fragmentManager;
-        fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction;
-        fragmentTransaction = fragmentManager.beginTransaction();
-
-        switch(option){
-            case 0:
-                UserViewFragment userViewFragment = new UserViewFragment();
-                fragmentTransaction.replace(R.id.fragment, userViewFragment);
                 break;
         }
 
