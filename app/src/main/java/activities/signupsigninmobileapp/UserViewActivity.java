@@ -2,6 +2,7 @@ package activities.signupsigninmobileapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,8 +15,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.KeyListener;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+
+import java.security.Key;
 
 public class UserViewActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, UserViewFragment.OnFragmentInteractionListener{
@@ -43,7 +48,7 @@ public class UserViewActivity extends AppCompatActivity
         navigationView.getMenu().getItem(0).setChecked(false);
 
         if(savedInstanceState == null){
-            setFragment(1);
+            setFragment(0);
         }
 
     }
@@ -91,7 +96,10 @@ public class UserViewActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_edit) {
+            editUserData();
+            return true;
+        } else if(id == R.id.action_changepwd){
             return true;
         }
 

@@ -4,32 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserViewFragment"
-    android:background="@drawable/side_nav_bar">
+    android:background="@drawable/side_nav_bar"
+    tools:context=".EditUserFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
+    <EditText
         android:id="@+id/eTxtAddress"
         android:layout_width="190dp"
         android:layout_height="37dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="103dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Address"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtAddress"
         app:layout_constraintTop_toBottomOf="@+id/eTxtTown" />
 
-    <TextView
+    <EditText
         android:id="@+id/eTxtTown"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginStart="12dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="1dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Town"
@@ -55,11 +58,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
-    <TextView
+    <EditText
         android:id="@+id/eTxtPhoneNumber"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="40dp"
         android:ems="10"
@@ -88,12 +92,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFullName" />
 
-    <TextView
+    <EditText
         android:id="@+id/eTxtEmail"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="15dp"
+        android:layout_marginBottom="1dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Email"
@@ -111,12 +117,13 @@
         android:layout_marginTop="45dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
-        android:text="Welcome"
+        android:text="Edit Profile"
         android:textAlignment="textStart"
         android:textSize="65dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/eTxtLogin"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.00999999"
@@ -127,7 +134,7 @@
         android:layout_width="147dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="13dp"
         android:text="Full Name:"
@@ -139,12 +146,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eTxtLogin" />
 
-    <TextView
+    <EditText
         android:id="@+id/eTxtName"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
+        android:layout_marginBottom="1dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
@@ -154,7 +163,7 @@
         app:layout_constraintStart_toEndOf="@+id/txtFullName"
         app:layout_constraintTop_toBottomOf="@+id/eTxtLogin" />
 
-    <TextView
+    <EditText
         android:id="@+id/eTxtLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -183,6 +192,7 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/txtTown"
         app:layout_constraintEnd_toStartOf="@+id/eTxtPostalCode"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPhoneNumber" />
 
@@ -208,19 +218,20 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="105dp"
+        android:layout_marginBottom="40dp"
         android:text="Address:"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toStartOf="@+id/eTxtAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTown" />
 
-    <TextView
+    <EditText
         android:id="@+id/eTxtPostalCode"
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="1dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Postal code"
@@ -229,5 +240,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtPostalCode"
         app:layout_constraintTop_toBottomOf="@+id/eTxtPhoneNumber" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="113dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="60dp"
+        android:text="Save"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
 </android.support.constraint.ConstraintLayout>
