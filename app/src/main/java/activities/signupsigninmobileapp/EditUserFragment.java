@@ -1,12 +1,20 @@
 package activities.signupsigninmobileapp;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 /**
@@ -17,11 +25,21 @@ import android.view.ViewGroup;
  * Use the {@link EditUserFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EditUserFragment extends Fragment {
+public class EditUserFragment extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private Button btnSave;
+    private EditText login;
+    private EditText email;
+    private EditText name;
+    private EditText phoneNumber;
+    private EditText postalCode;
+    private EditText address;
+    private EditText town;
+    private UserBean user;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -64,7 +82,20 @@ public class EditUserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_user, container, false);
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_user_view, container, false);
+        login = view.findViewById(R.id.eTxtLogin);
+        email = view.findViewById(R.id.eTxtEmail);
+        name = view.findViewById(R.id.eTxtName);
+        phoneNumber = view.findViewById(R.id.eTxtPhoneNumber);
+        postalCode = view.findViewById(R.id.eTxtPostalCode);
+        town = view.findViewById(R.id.eTxtTown);
+        address = view.findViewById(R.id.eTxtAddress);
+        btnSave = view.findViewById(R.id.btnSave);
+
+        //login.setText(user.getLogin());
+        // email.setText(user.getEmail());
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -89,6 +120,48 @@ public class EditUserFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    /**
+     * Called when a view has been clicked.
+     *
+     * @param v The view that was clicked.
+     */
+    @Override
+    public void onClick(View v) {
+
+        if(btnSave.isPressed()){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
+            builder.setCancelable(true);
+            builder.setTitle("Save changes");
+            builder.setMessage("Do you want to save the changes?");
+            builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //TODO Guardar cambios enviandole los datos nuevos a la base de datos para que abra el siguiente fragment con los datos ya actualizados
+
+                    FragmentManager fragmentManager;
+                    fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction;
+                    fragmentTransaction = fragmentManager.beginTransaction();
+
+                    UserViewFragment userViewFragment = new UserViewFragment();
+                    fragmentTransaction.replace(R.id.fragment, userViewFragment);
+
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+            });
+            builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // No pasa nada. Se cierra la ventana emergente de confirmación
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
     }
 
     /**

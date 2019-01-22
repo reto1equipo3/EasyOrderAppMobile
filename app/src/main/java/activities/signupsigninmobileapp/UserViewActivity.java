@@ -97,7 +97,17 @@ public class UserViewActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_edit) {
-            editUserData();
+            FragmentManager fragmentManager;
+            fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction;
+            fragmentTransaction = fragmentManager.beginTransaction();
+
+            EditUserFragment editUserFragment = new EditUserFragment();
+            fragmentTransaction.replace(R.id.fragment, editUserFragment);
+
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+            
             return true;
         } else if(id == R.id.action_changepwd){
             return true;
