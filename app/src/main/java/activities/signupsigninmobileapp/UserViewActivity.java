@@ -43,7 +43,7 @@ public class UserViewActivity extends AppCompatActivity
         navigationView.getMenu().getItem(0).setChecked(false);
 
         if(savedInstanceState == null){
-            setFragment(0);
+            setFragment(1);
         }
 
     }

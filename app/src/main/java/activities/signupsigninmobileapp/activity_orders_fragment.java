@@ -63,9 +63,7 @@ public class activity_orders_fragment extends Fragment implements View.OnClickLi
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-
+         }
     }
 
     @Override
