@@ -10,7 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:id="@+id/eTxtAddress"
+        android:id="@+id/eTxtAddressEdit"
         android:layout_width="190dp"
         android:layout_height="37dp"
         android:layout_marginEnd="12dp"
@@ -22,10 +22,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtAddress"
-        app:layout_constraintTop_toBottomOf="@+id/eTxtTown" />
+        app:layout_constraintTop_toBottomOf="@+id/eTxtTownEdit" />
 
     <TextView
-        android:id="@+id/eTxtTown"
+        android:id="@+id/eTxtTownEdit"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginStart="12dp"
@@ -34,10 +34,10 @@
         android:inputType="textPersonName"
         android:text="Town"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/eTxtAddress"
+        app:layout_constraintBottom_toTopOf="@+id/eTxtAddressEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtTown"
-        app:layout_constraintTop_toBottomOf="@+id/eTxtPostalCode" />
+        app:layout_constraintTop_toBottomOf="@+id/eTxtPostalCodeEdit" />
 
     <TextView
         android:id="@+id/txtPhoneNumber"
@@ -50,13 +50,13 @@
         android:text="Phone Number:"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/txtPostalCode"
-        app:layout_constraintEnd_toStartOf="@+id/eTxtPhoneNumber"
+        app:layout_constraintEnd_toStartOf="@+id/eTxtPhoneNumberEdit"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
     <TextView
-        android:id="@+id/eTxtPhoneNumber"
+        android:id="@+id/eTxtPhoneNumberEdit"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginStart="10dp"
@@ -66,10 +66,10 @@
         android:inputType="textPersonName"
         android:text="Phone number"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/eTxtPostalCode"
+        app:layout_constraintBottom_toTopOf="@+id/eTxtPostalCodeEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtPhoneNumber"
-        app:layout_constraintTop_toBottomOf="@+id/eTxtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/eTxtEmailEdit" />
 
     <TextView
         android:id="@+id/txtEmail"
@@ -82,14 +82,14 @@
         android:text="Email:"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/txtPhoneNumber"
-        app:layout_constraintEnd_toStartOf="@+id/eTxtEmail"
+        app:layout_constraintEnd_toStartOf="@+id/eTxtEmailEdit"
         app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFullName" />
 
     <TextView
-        android:id="@+id/eTxtEmail"
+        android:id="@+id/eTxtEmailEdit"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginStart="10dp"
@@ -98,10 +98,10 @@
         android:inputType="textPersonName"
         android:text="Email"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/eTxtPhoneNumber"
+        app:layout_constraintBottom_toTopOf="@+id/eTxtPhoneNumberEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/eTxtName" />
+        app:layout_constraintTop_toBottomOf="@+id/eTxtNameEdit" />
 
     <TextView
         android:id="@+id/textView3"
@@ -115,7 +115,7 @@
         android:textAlignment="textStart"
         android:textSize="65dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/eTxtLogin"
+        app:layout_constraintBottom_toTopOf="@+id/eTxtLoginEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -133,14 +133,14 @@
         android:text="Full Name:"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/txtEmail"
-        app:layout_constraintEnd_toStartOf="@+id/eTxtName"
+        app:layout_constraintEnd_toStartOf="@+id/eTxtNameEdit"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTxtLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/eTxtLoginEdit" />
 
     <TextView
-        android:id="@+id/eTxtName"
+        android:id="@+id/eTxtNameEdit"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginStart="10dp"
@@ -149,13 +149,13 @@
         android:inputType="textPersonName"
         android:text="Name"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/eTxtEmail"
+        app:layout_constraintBottom_toTopOf="@+id/eTxtEmailEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtFullName"
-        app:layout_constraintTop_toBottomOf="@+id/eTxtLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/eTxtLoginEdit" />
 
     <TextView
-        android:id="@+id/eTxtLogin"
+        android:id="@+id/eTxtLoginEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -166,7 +166,7 @@
         android:inputType="textPersonName"
         android:text="Login"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/eTxtName"
+        app:layout_constraintBottom_toTopOf="@+id/eTxtNameEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -182,7 +182,7 @@
         android:text="Postal Code:"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/txtTown"
-        app:layout_constraintEnd_toStartOf="@+id/eTxtPostalCode"
+        app:layout_constraintEnd_toStartOf="@+id/eTxtPostalCodeEdit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPhoneNumber" />
 
@@ -197,7 +197,7 @@
         android:text="Town:"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/txtAddress"
-        app:layout_constraintEnd_toStartOf="@+id/eTxtTown"
+        app:layout_constraintEnd_toStartOf="@+id/eTxtTownEdit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPostalCode" />
 
@@ -212,12 +212,12 @@
         android:text="Address:"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/eTxtAddress"
+        app:layout_constraintEnd_toStartOf="@+id/eTxtAddressEdit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTown" />
 
     <TextView
-        android:id="@+id/eTxtPostalCode"
+        android:id="@+id/eTxtPostalCodeEdit"
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginEnd="24dp"
@@ -225,9 +225,9 @@
         android:inputType="textPersonName"
         android:text="Postal code"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/eTxtTown"
+        app:layout_constraintBottom_toTopOf="@+id/eTxtTownEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtPostalCode"
-        app:layout_constraintTop_toBottomOf="@+id/eTxtPhoneNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/eTxtPhoneNumberEdit" />
 
 </android.support.constraint.ConstraintLayout>

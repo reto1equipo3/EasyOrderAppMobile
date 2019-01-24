@@ -1,19 +1,13 @@
 package activities.signupsigninmobileapp;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.method.KeyListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import java.security.Key;
 
 
 /**
@@ -79,13 +73,21 @@ public class UserViewFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_user_view, container, false);
-        login = view.findViewById(R.id.eTxtLogin);
-        email = view.findViewById(R.id.eTxtEmail);
-        name = view.findViewById(R.id.eTxtName);
-        phoneNumber = view.findViewById(R.id.eTxtPhoneNumber);
-        postalCode = view.findViewById(R.id.eTxtPostalCode);
-        town = view.findViewById(R.id.eTxtTown);
-        address = view.findViewById(R.id.eTxtAddress);
+        login = view.findViewById(R.id.eTxtLoginEdit);
+        email = view.findViewById(R.id.eTxtEmailEdit);
+        name = view.findViewById(R.id.eTxtNameEdit);
+        phoneNumber = view.findViewById(R.id.eTxtPhoneNumberEdit);
+        postalCode = view.findViewById(R.id.eTxtPostalCodeEdit);
+        town = view.findViewById(R.id.eTxtTownEdit);
+        address = view.findViewById(R.id.eTxtAddressEdit);
+
+        /*login.setText(user.getLogin());
+        email.setText(user.getLogin());
+        name.setText(user.getFullName());
+        phoneNumber.setText(user.getPhoneNumber());
+        postalCode.setText(user.getPostalCode());
+        town.setText(user.getTown());
+        address.setText(user.getAddress());*/
 
        //login.setText(user.getLogin());
        // email.setText(user.getEmail());

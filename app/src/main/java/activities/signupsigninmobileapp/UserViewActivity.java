@@ -23,7 +23,7 @@ import android.widget.EditText;
 import java.security.Key;
 
 public class UserViewActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, UserViewFragment.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, UserViewFragment.OnFragmentInteractionListener, EditUserFragment.OnFragmentInteractionListener, PasswordChange.OnFragmentInteractionListener, activity_orders_fragment.OnFragmentInteractionListener{
 
 
 
@@ -97,19 +97,11 @@ public class UserViewActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_edit) {
-            FragmentManager fragmentManager;
-            fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction;
-            fragmentTransaction = fragmentManager.beginTransaction();
-
-            EditUserFragment editUserFragment = new EditUserFragment();
-            fragmentTransaction.replace(R.id.fragment, editUserFragment);
-
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+            setFragment(4);
             
             return true;
         } else if(id == R.id.action_changepwd){
+            setFragment(5);
             return true;
         }
 
@@ -178,6 +170,12 @@ public class UserViewActivity extends AppCompatActivity
                 shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,"My app");
                 startActivity(Intent.createChooser(shareIntent,"Share via"));
                 break;
+            case 4:
+                EditUserFragment editUserFragment = new EditUserFragment();
+                fragmentTransaction.replace(R.id.fragment, editUserFragment);
+            case 5:
+                PasswordChange passwordChangeFragment = new PasswordChange();
+                fragmentTransaction.replace(R.id.fragment, passwordChangeFragment);
         }
 
         //Añadir fragment a la cola

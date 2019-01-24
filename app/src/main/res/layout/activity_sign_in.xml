@@ -9,7 +9,7 @@
     tools:context=".SignInActivity">
 
     <EditText
-        android:id="@+id/eTxtLogin"
+        android:id="@+id/eTxtLoginEdit"
         android:layout_width="243dp"
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
@@ -95,13 +95,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTxtLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/eTxtLoginEdit" />
 
     <CheckBox
         android:id="@+id/chkRememberLogin"
         android:layout_width="190dp"
         android:layout_height="27dp"
-        android:layout_alignStart="@+id/eTxtLogin"
+        android:layout_alignStart="@+id/eTxtLoginEdit"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="20dp"
@@ -120,7 +120,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/eTxtLogin"
+        app:layout_constraintBottom_toTopOf="@+id/eTxtLoginEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"

@@ -42,8 +42,22 @@ public interface Logic {
    
     /**
      * This method ends the user's session
-     * @param user. The UserBean object to be ended
+     * @param user .The UserBean object to be ended
      * @throws Exception If there is any error while processing.
      */
     public void logOut(UserBean user) throws DatabaseException;
+
+    /**
+     * This method updates the user's password
+     * @param user .The UserBean object to be updated.
+     * @throws Exception If there is any error while processing.
+     */
+   // public void changePassword(UserBean user) throws BadPasswordException, DatabaseException;
+
+    /**
+     * This method updates the user's data.
+     * @param user .The UserBean object to be updated.
+     * @throws Exception If there is any error while processing.
+     */
+   // public void editUser(UserBean user) throws
 }

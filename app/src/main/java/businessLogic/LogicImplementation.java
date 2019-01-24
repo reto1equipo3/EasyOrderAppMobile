@@ -132,4 +132,10 @@ public class LogicImplementation implements Logic {
 		}
 	}
 
+	/*public void changePassword(UserBean user) throws BadPasswordException, DatabaseException{
+		LOGGER.info("LogicImplementation::signUp: Beginning with the password change.");
+		// Create message of type CHANGE_PWD and add the user
+		Message message = new Message(MessageType.CHANGE_PWD, user);
+	}*/
+
 }
