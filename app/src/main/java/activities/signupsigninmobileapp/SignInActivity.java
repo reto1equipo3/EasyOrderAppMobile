@@ -29,6 +29,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private EditText password;
     private Button btnSignIn;
     private TextView hpNotRegister;
+    private TextView hpForgotPwd;
     private CheckBox remember;
     private UserBean user;
     private Logic logicController;
@@ -49,9 +50,11 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         password = findViewById(R.id.eTxtPassword);
         btnSignIn = findViewById(R.id.btnSignIn);
         hpNotRegister = findViewById(R.id.txtClickhere);
+        hpForgotPwd = findViewById(R.id.txtForgotPwd);
         remember = findViewById(R.id.chkRememberLogin);
         btnSignIn.setOnClickListener(this);
         hpNotRegister.setOnClickListener(this);
+        hpForgotPwd.setOnClickListener(this);
 
         LoadLogin();
         logicController = LogicFactory.createLogicImplementation("USER_CLIENT_TYPE");
@@ -145,6 +148,10 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         if (hpNotRegister.isPressed()) {
             Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
             startActivity(intent);
+
+        }
+
+        if(hpForgotPwd.isPressed()){
 
         }
 
