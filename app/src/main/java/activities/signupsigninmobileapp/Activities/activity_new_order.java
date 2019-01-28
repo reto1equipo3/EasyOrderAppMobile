@@ -1,4 +1,4 @@
-package activities.signupsigninmobileapp;
+package activities.signupsigninmobileapp.Activities;
 
 import android.content.Intent;
 import android.provider.MediaStore;
@@ -8,7 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
-import android.widget.Toast;
+
+import activities.signupsigninmobileapp.R;
 
 public class activity_new_order extends AppCompatActivity implements View.OnClickListener{
 

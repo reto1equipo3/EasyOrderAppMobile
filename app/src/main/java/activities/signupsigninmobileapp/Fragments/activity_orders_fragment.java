@@ -1,44 +1,44 @@
-package activities.signupsigninmobileapp;
+package activities.signupsigninmobileapp.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.TableLayout;
+
+import activities.signupsigninmobileapp.Activities.activity_new_order;
+import activities.signupsigninmobileapp.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link UserViewFragment.OnFragmentInteractionListener} interface
+ * {@link activity_orders_fragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link UserViewFragment#newInstance} factory method to
+ * Use the {@link activity_orders_fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UserViewFragment extends Fragment implements View.OnClickListener {
+public class activity_orders_fragment extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private TextView login;
-    private TextView email;
-    private TextView name;
-    private TextView phoneNumber;
-    private TextView postalCode;
-    private TextView address;
-    private TextView town;
-    private UserBean user;
+    private Button btnAdd;
+    private TableLayout tableLayout;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
-    public UserViewFragment() {
+    public activity_orders_fragment() {
         // Required empty public constructor
     }
 
@@ -48,11 +48,11 @@ public class UserViewFragment extends Fragment implements View.OnClickListener {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment UserViewFragment.
+     * @return A new instance of fragment activity_orders_fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static UserViewFragment newInstance(String param1, String param2) {
-        UserViewFragment fragment = new UserViewFragment();
+    public static activity_orders_fragment newInstance(String param1, String param2) {
+        activity_orders_fragment fragment = new activity_orders_fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,31 +66,18 @@ public class UserViewFragment extends Fragment implements View.OnClickListener {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_user_view, container, false);
-        login = view.findViewById(R.id.eTxtLoginEdit);
-        email = view.findViewById(R.id.eTxtEmailEdit);
-        name = view.findViewById(R.id.eTxtNameEdit);
-        phoneNumber = view.findViewById(R.id.eTxtPhoneNumberEdit);
-        postalCode = view.findViewById(R.id.eTxtPostalCodeEdit);
-        town = view.findViewById(R.id.eTxtTownEdit);
-        address = view.findViewById(R.id.eTxtAddressEdit);
+        View view = inflater.inflate(R.layout.fragment_activity_orders, container, false);
+        btnAdd = view.findViewById(R.id.btnAdd);
+        tableLayout = view.findViewById(R.id.tableLayout);
+        btnAdd.setOnClickListener(this);
 
-        /*login.setText(user.getLogin());
-        email.setText(user.getLogin());
-        name.setText(user.getFullName());
-        phoneNumber.setText(user.getPhoneNumber());
-        postalCode.setText(user.getPostalCode());
-        town.setText(user.getTown());
-        address.setText(user.getAddress());*/
-
-       //login.setText(user.getLogin());
-       // email.setText(user.getEmail());
         return view;
     }
 
@@ -125,7 +112,10 @@ public class UserViewFragment extends Fragment implements View.OnClickListener {
      */
     @Override
     public void onClick(View v) {
-
+        if(btnAdd.isPressed()){
+            Intent intent = new Intent(getActivity(), activity_new_order.class);
+            startActivity(intent);
+        }
     }
 
     /**

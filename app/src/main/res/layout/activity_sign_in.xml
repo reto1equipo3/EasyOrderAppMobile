@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/side_nav_bar"
     android:visibility="visible"
-    tools:context=".SignInActivity">
+    tools:context=".Activities.SignInActivity">
 
     <EditText
         android:id="@+id/eTxtLoginEdit"
@@ -63,6 +63,8 @@
         android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:layout_alignTop="@+id/txtNotRegistered"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="9dp"
         android:layout_toEndOf="@+id/txtNotRegistered"
@@ -126,7 +128,7 @@
         android:id="@+id/txtForgotPwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="149dp"
+        android:layout_marginStart="157dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="175dp"
         android:layout_marginBottom="40dp"

@@ -1,30 +1,23 @@
-package activities.signupsigninmobileapp;
+package activities.signupsigninmobileapp.Activities;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.Blob;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
+import activities.signupsigninmobileapp.R;
+import activities.signupsigninmobileapp.UserBean;
 import businessLogic.Logic;
 import businessLogic.LogicFactory;
 import exceptions.EmailNotUniqueException;

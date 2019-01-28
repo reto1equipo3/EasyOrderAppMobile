@@ -1,11 +1,9 @@
-package activities.signupsigninmobileapp;
+package activities.signupsigninmobileapp.Activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
@@ -15,15 +13,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.method.KeyListener;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
 
-import java.security.Key;
+import activities.signupsigninmobileapp.R;
+import activities.signupsigninmobileapp.Fragments.UserViewFragment;
+import activities.signupsigninmobileapp.Fragments.activity_orders_fragment;
 
 public class UserViewActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, UserViewFragment.OnFragmentInteractionListener, EditUserFragment.OnFragmentInteractionListener, PasswordChange.OnFragmentInteractionListener, activity_orders_fragment.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, UserViewFragment.OnFragmentInteractionListener, activity_orders_fragment.OnFragmentInteractionListener {
 
 
 
@@ -97,11 +95,13 @@ public class UserViewActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_edit) {
-            setFragment(4);
+            Intent intent = new Intent(UserViewActivity.this, EditUserActivity.class);
+            startActivity(intent);
             
             return true;
         } else if(id == R.id.action_changepwd){
-            setFragment(5);
+            Intent intent = new Intent(UserViewActivity.this, PasswordChangeActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -170,12 +170,6 @@ public class UserViewActivity extends AppCompatActivity
                 shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,"My app");
                 startActivity(Intent.createChooser(shareIntent,"Share via"));
                 break;
-            case 4:
-                EditUserFragment editUserFragment = new EditUserFragment();
-                fragmentTransaction.replace(R.id.fragment, editUserFragment);
-            case 5:
-                PasswordChange passwordChangeFragment = new PasswordChange();
-                fragmentTransaction.replace(R.id.fragment, passwordChangeFragment);
         }
 
         //Añadir fragment a la cola

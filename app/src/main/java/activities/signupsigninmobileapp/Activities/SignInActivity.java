@@ -1,4 +1,4 @@
-package activities.signupsigninmobileapp;
+package activities.signupsigninmobileapp.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import activities.signupsigninmobileapp.ConnectionThread;
+import activities.signupsigninmobileapp.R;
+import activities.signupsigninmobileapp.UserBean;
 import businessLogic.Logic;
 import businessLogic.LogicFactory;
 import exceptions.BadPasswordException;
@@ -152,7 +155,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         }
 
         if(hpForgotPwd.isPressed()){
-
+            Intent intent = new Intent(SignInActivity.this, RecoverPasswordActivity.class);
+            startActivity(intent);
         }
 
     }

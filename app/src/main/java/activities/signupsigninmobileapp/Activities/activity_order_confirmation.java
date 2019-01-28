@@ -1,4 +1,4 @@
-package activities.signupsigninmobileapp;
+package activities.signupsigninmobileapp.Activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,7 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
-import android.widget.Toast;
+
+import activities.signupsigninmobileapp.R;
 
 public class activity_order_confirmation extends AppCompatActivity implements View.OnClickListener{
 

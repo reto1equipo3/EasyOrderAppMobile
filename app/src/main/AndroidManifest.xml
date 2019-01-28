@@ -12,9 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecoverPasswordActivity"></activity>
+        <activity android:name=".Activities.PasswordChangeActivity"></activity>
+        <activity android:name=".Activities.EditUserActivity" />
+        <activity android:name=".Activities.RecoverPasswordActivity" />
         <activity
-            android:name=".StartActivity"
+            android:name=".Activities.StartActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <intent-filter>
@@ -24,17 +26,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".Activities.SignInActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".Activities.SignUpActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".UserViewActivity"
+            android:name=".Activities.UserViewActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity_orders" />
-        <activity android:name=".activity_new_order" />
-        <activity android:name=".activity_order_confirmation" />
+        <activity android:name=".Activities.activity_orders" />
+        <activity android:name=".Activities.activity_new_order" />
+        <activity android:name=".Activities.activity_order_confirmation" />
     </application>
 
 </manifest>

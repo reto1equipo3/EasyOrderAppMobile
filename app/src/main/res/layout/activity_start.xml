@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartActivity"
+    tools:context=".Activities.StartActivity"
     android:background="@drawable/side_nav_bar">
 
     <ImageView
@@ -12,9 +12,11 @@
         android:layout_width="729dp"
         android:layout_height="372dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="239dp"
         android:src="@drawable/logo_binary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

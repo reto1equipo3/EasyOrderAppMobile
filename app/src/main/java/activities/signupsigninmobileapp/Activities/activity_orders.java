@@ -1,4 +1,4 @@
-package activities.signupsigninmobileapp;
+package activities.signupsigninmobileapp.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
-import android.widget.Toast;
+
+import activities.signupsigninmobileapp.R;
 
 /**
  * This is the activity_order, the first activity to open after signing up. It shows all the orders the user has saved.
