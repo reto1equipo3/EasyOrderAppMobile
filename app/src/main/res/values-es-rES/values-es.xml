@@ -15,8 +15,7 @@
     <string name="sign_in">Iniciar sesión</string>
     <string name="enter_pwd">Insertar contraseña</string>
     <string name="remember_login">Recordar usuario</string>
-    <string name="not_regi">¿No estás registrado?</string>
-    <string name="click_here">¡Haz click aquí!</string>
+    <string name="not_regi">Not registered? Click here!</string>
     <string name="forgot_pwd">He olvidado mi contraseña.</string>
     <string name="enter_full_name">Insertar nombre completo</string>
     <string name="enter_email">Insertar email</string>
@@ -31,7 +30,7 @@
     <string name="sign_up">Registrarse</string>
     <string name="agree">Estoy de acuerdo con</string>
     <string name="terms_of_use">Términos de uso y política de privacidad</string>
-    <string name="already_registered">¿Ya estás registrado?</string>
+    <string name="already_registered">¿Ya estás registrado? ¡Haz click aquí!</string>
     <string name="welcome">Bienvenido</string>
     <string name="full_name">Nombre</string>
     <string name="email">Email</string>
@@ -59,5 +58,11 @@
     <string name="order_conf">Confirmación de Pedido</string>
     <string name="cancel">Cancelar</string>
     <string name="accept">Aceptar</string>
+    <string name="save">Guardar</string>
+    <string name="current_pwd">Contraseña actual</string>
+    <string name="new_pwd">Nueva contraseña</string>
+    <string name="conf_new_pwd">Confirmar nueva contraseña</string>
+    <string name="recover_pwd">Recuperar contraseña</string>
+    <string name="pwd_recovery">Recuperación de contraseña</string>
 
 </resources>

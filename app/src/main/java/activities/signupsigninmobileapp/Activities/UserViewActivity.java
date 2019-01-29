@@ -35,8 +35,7 @@ public class UserViewActivity extends AppCompatActivity
 
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -46,7 +45,7 @@ public class UserViewActivity extends AppCompatActivity
         navigationView.getMenu().getItem(0).setChecked(false);
 
         if(savedInstanceState == null){
-            setFragment(0);
+            setFragment(1);
         }
 
     }

@@ -10,7 +10,7 @@
         android:id="@+id/btnAdd"
         android:layout_width="65dp"
         android:layout_height="64dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="166dp"
         android:layout_marginBottom="8dp"
@@ -26,12 +26,12 @@
         android:id="@+id/eTxtOrderName"
         android:layout_width="176dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="New Order"
+        android:text="@string/new_order"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
         app:layout_constraintEnd_toStartOf="@+id/btnSaveOrder"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
         android:layout_height="58dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="30dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:scaleType="centerInside"
@@ -92,7 +92,7 @@
                 android:layout_weight="1"
                 android:background="#f1f1f1"
                 android:gravity="center"
-                android:text="Product"
+                android:text="@string/product"
                 android:textStyle="bold" />
 
             <TextView
@@ -101,7 +101,7 @@
                 android:layout_weight="1"
                 android:background="#f1f1f1"
                 android:gravity="center"
-                android:text="Quantity/Kg"
+                android:text="@string/quantity"
                 android:textStyle="bold" />
 
             <TextView
@@ -110,7 +110,7 @@
                 android:layout_weight="1"
                 android:background="#f1f1f1"
                 android:gravity="center"
-                android:text="Price(€)"
+                android:text="@string/price"
                 android:textStyle="bold" />
 
             <TextView
@@ -119,7 +119,7 @@
                 android:layout_weight="1"
                 android:background="#f1f1f1"
                 android:gravity="center"
-                android:text="Total(€)"
+                android:text="@string/total"
                 android:textStyle="bold" />
         </TableRow>
     </TableLayout>
@@ -129,8 +129,7 @@
         android:layout_width="51dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="21dp"
         android:layout_marginBottom="8dp"
         android:background="#f1f1f1"
         app:layout_constraintBottom_toTopOf="@+id/btnProcessOrder"
@@ -143,12 +142,12 @@
     <Button
         android:id="@+id/btnProcessOrder"
         android:layout_width="135dp"
-        android:layout_height="42dp"
+        android:layout_height="58dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="25dp"
         android:layout_marginBottom="8dp"
-        android:text="Process Order"
+        android:text="@string/proccess"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.898"

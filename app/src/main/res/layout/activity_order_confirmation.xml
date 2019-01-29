@@ -14,7 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Accept"
+        android:text="@string/accept"
         android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Cancel"
+        android:text="@string/cancel"
         android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="8dp"
         android:paddingLeft="50dp"
-        android:text="Order Confirmation"
+        android:text="@string/order_conf"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,7 @@
                 android:layout_weight="1"
                 android:background="#f1f1f1"
                 android:gravity="center"
-                android:text="Product"
+                android:text="@string/product"
                 android:textStyle="bold" />
 
             <TextView
@@ -82,7 +82,7 @@
                 android:layout_weight="1"
                 android:background="#f1f1f1"
                 android:gravity="center"
-                android:text="Quantity/Kg"
+                android:text="@string/quantity"
                 android:textStyle="bold" />
 
             <TextView
@@ -91,7 +91,7 @@
                 android:layout_weight="1"
                 android:background="#f1f1f1"
                 android:gravity="center"
-                android:text="Price(€)"
+                android:text="@string/price"
                 android:textStyle="bold" />
 
             <TextView
@@ -100,7 +100,7 @@
                 android:layout_weight="1"
                 android:background="#f1f1f1"
                 android:gravity="center"
-                android:text="Total(€)"
+                android:text="@string/total"
                 android:textStyle="bold" />
         </TableRow>
 

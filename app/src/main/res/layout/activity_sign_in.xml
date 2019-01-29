@@ -19,7 +19,7 @@
         android:drawableLeft="@drawable/ic_user"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Enter Login"
+        android:hint="@string/enter_login"
         android:inputType="textPersonName"
         android:maxLength="20"
         android:paddingLeft="10dp"
@@ -36,7 +36,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/boton_redondeado"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/txtClickhere"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,36 +44,20 @@
         app:layout_constraintTop_toBottomOf="@+id/chkRememberLogin" />
 
     <TextView
-        android:id="@+id/txtNotRegistered"
-        android:layout_width="wrap_content"
-        android:layout_height="21dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="10dp"
-        android:text="Not registered?"
-        app:layout_constraintBottom_toTopOf="@+id/txtForgotPwd"
-        app:layout_constraintEnd_toStartOf="@+id/txtClickhere"
-        app:layout_constraintHorizontal_bias="0.63"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
-
-    <TextView
         android:id="@+id/txtClickhere"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:layout_alignTop="@+id/txtNotRegistered"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="125dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="9dp"
         android:layout_toEndOf="@+id/txtNotRegistered"
-        android:text="Click here!"
+        android:text="@string/not_regi"
         android:textColor="#3399ff"
         app:layout_constraintBottom_toTopOf="@+id/txtForgotPwd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toEndOf="@+id/txtNotRegistered"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 
     <EditText
@@ -87,7 +71,7 @@
         android:drawableLeft="@drawable/ic_password"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Enter Password"
+        android:hint="@string/enter_pwd"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toTopOf="@+id/chkRememberLogin"
@@ -102,7 +86,7 @@
         android:layout_height="27dp"
         android:layout_alignStart="@+id/eTxtLoginEdit"
         android:layout_alignParentBottom="true"
-        android:text="Remember login"
+        android:text="@string/remember_login"
         app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.365"
@@ -129,14 +113,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="157dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="9dp"
         android:layout_marginEnd="175dp"
         android:layout_marginBottom="40dp"
-        android:text="I forgot my password."
+        android:text="@string/forgot_pwd"
         android:textColor="#3399ff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNotRegistered" />
+        app:layout_constraintTop_toBottomOf="@+id/txtClickhere" />
 
 </android.support.constraint.ConstraintLayout>

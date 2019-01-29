@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">EasyOrderApp</string>
     <string name="Error">Error</string>
@@ -62,5 +63,5 @@
     <string name="conf_new_pwd">Confirm new password</string>
     <string name="recover_pwd">Recover password</string>
     <string name="pwd_recovery">Password recovery</string>
-    
+
 </resources>
