@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:screenOrientation="portrait"
     android:background="@drawable/side_nav_bar"
     tools:context=".Activities.SignUpActivity">
 
@@ -210,7 +211,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/boton_redondeado"
         android:text="@string/sign_up"
         android:textSize="17dp"
@@ -223,7 +224,7 @@
         android:id="@+id/txtClickHere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/txtAlreadyRegistered"
+        android:layout_alignTop="@+id/txtClickHere"
         android:layout_alignEnd="@+id/btnSignUp"
         android:layout_marginStart="229dp"
         android:layout_marginTop="17dp"

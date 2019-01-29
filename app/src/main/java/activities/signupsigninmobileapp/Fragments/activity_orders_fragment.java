@@ -2,6 +2,7 @@ package activities.signupsigninmobileapp.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -74,6 +75,7 @@ public class activity_orders_fragment extends Fragment implements View.OnClickLi
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_activity_orders, container, false);
+
         btnAdd = view.findViewById(R.id.btnAdd);
         tableLayout = view.findViewById(R.id.tableLayout);
         btnAdd.setOnClickListener(this);

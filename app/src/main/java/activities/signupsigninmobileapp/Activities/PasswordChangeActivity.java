@@ -1,5 +1,6 @@
 package activities.signupsigninmobileapp.Activities;
 
+import android.content.pm.ActivityInfo;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,9 @@ public class PasswordChangeActivity extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_change);
+
+        //Ventana siempre en vertical
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 
         currentPassword = findViewById(R.id.eTxtCurrentPassword);
         newPassword = findViewById(R.id.eTxtNewPassword);

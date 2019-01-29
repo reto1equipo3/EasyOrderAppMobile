@@ -39,14 +39,14 @@
     <string name="town">Ciudad</string>
     <string name="address">Dirección</string>
     <string name="change_pwd">Cambiar contraseña</string>
-    <string name="edit_profile">Editar información</string>
+    <string name="edit_profile">Editar perfil</string>
     <string name="user_data">Perfil</string>
     <string name="orders">Pedidos</string>
     <string name="log_out">Cerrar Sesión</string>
     <string name="share">Compartir</string>
     <string name="communicate">Comunicación</string>
     <string name="your_oders">Tus Pedidos</string>
-    <string name="order_num">Nº Pedido</string>
+    <string name="order_num">Nº</string>
     <string name="order_name">Nombre</string>
     <string name="order_date">Fecha</string>
     <string name="price">Precio(€)</string>

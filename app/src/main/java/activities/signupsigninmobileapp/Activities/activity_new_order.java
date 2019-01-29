@@ -2,6 +2,7 @@ package activities.signupsigninmobileapp.Activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.provider.MediaStore;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -37,6 +38,9 @@ public class activity_new_order extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_order);
+
+        //Ventana siempre en vertical
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 
         btnProcessOrder = findViewById(R.id.btnProcessOrder);
         btnProcessOrder.setOnClickListener(this);

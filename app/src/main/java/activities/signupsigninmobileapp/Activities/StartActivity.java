@@ -2,6 +2,7 @@ package activities.signupsigninmobileapp.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -14,6 +15,9 @@ public class StartActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);;
+
+        //Ventana siempre en vertical
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 
         new Handler().postDelayed(new Runnable() {
             @Override

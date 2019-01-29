@@ -1,5 +1,6 @@
 package activities.signupsigninmobileapp.Activities;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.DialogInterface;
@@ -35,6 +36,9 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_user);
+
+        //Ventana siempre en vertical
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 
         login = findViewById(R.id.eTxtLoginEdit);
         email = findViewById(R.id.eTxtEmailEdit);

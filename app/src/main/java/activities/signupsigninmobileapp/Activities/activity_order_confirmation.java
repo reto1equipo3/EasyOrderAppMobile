@@ -2,6 +2,7 @@ package activities.signupsigninmobileapp.Activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -35,6 +36,9 @@ public class activity_order_confirmation extends AppCompatActivity implements Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_confirmation);
+
+        //Ventana siempre en vertical
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 
         btnCancel = findViewById(R.id.btnCancel);
         btnCancel.setOnClickListener(this);
