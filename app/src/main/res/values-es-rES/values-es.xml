@@ -38,7 +38,7 @@
     <string name="postal_code">CP</string>
     <string name="town">Ciudad</string>
     <string name="address">Dirección</string>
-    <string name="change_pwd">Cambiar contraseña</string>
+    <string name="change_pwd">Cambiar Contraseña</string>
     <string name="edit_profile">Editar perfil</string>
     <string name="user_data">Perfil</string>
     <string name="orders">Pedidos</string>
@@ -55,14 +55,14 @@
     <string name="quantity">Cantidad/Kg</string>
     <string name="total">Total(€)</string>
     <string name="proccess">Procesar pedido</string>
-    <string name="order_conf">Confirmación de Pedido</string>
+    <string name="order_conf">Confirmación</string>
     <string name="cancel">Cancelar</string>
     <string name="accept">Aceptar</string>
     <string name="save">Guardar</string>
     <string name="current_pwd">Contraseña actual</string>
     <string name="new_pwd">Nueva contraseña</string>
     <string name="conf_new_pwd">Confirmar nueva contraseña</string>
-    <string name="recover_pwd">Recuperar contraseña</string>
+    <string name="recover_pwd">Recuperar Contraseña</string>
     <string name="pwd_recovery">Recuperación de contraseña</string>
 
 </resources>
