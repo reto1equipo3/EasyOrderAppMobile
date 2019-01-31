@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import activities.signupsigninmobileapp.ConnectionThread;
 import activities.signupsigninmobileapp.R;
-import activities.signupsigninmobileapp.UserBean;
+import Beans.UserBean;
 import businessLogic.Logic;
 import businessLogic.LogicFactory;
 import exceptions.BadPasswordException;

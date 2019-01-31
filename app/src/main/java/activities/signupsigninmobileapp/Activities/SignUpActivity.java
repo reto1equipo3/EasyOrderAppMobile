@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 import activities.signupsigninmobileapp.R;
-import activities.signupsigninmobileapp.UserBean;
+import Beans.UserBean;
 import businessLogic.Logic;
 import businessLogic.LogicFactory;
 import exceptions.EmailNotUniqueException;

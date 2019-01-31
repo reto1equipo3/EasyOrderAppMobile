@@ -5,6 +5,7 @@ android {
     defaultConfig {
         applicationId "activities.signupsigninmobileapp"
         minSdkVersion 21
+        multiDexEnabled true
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -23,7 +24,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     //implementation 'com.android.support:appcompat-v7:22.0.0'
     //implementation 'com.google.android.gms:play-services:7.8+'
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -33,9 +34,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     //compile fileTree(dir: 'libs', includes: ['*.jar'])
     //compile 'android-support-v7-appcompat.jar'
-
     implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation files('libs/asm-all-repackaged-2.2.0-b21.jar')
 }

@@ -1,7 +1,7 @@
 package activities.signupsigninmobileapp;
 
+import Beans.UserBean;
 import businessLogic.Logic;
-import message.MessageType;
 
 
 public class ConnectionThread extends Thread {

@@ -12,7 +12,7 @@ import android.widget.EditText;
 import java.util.logging.Logger;
 
 import activities.signupsigninmobileapp.R;
-import activities.signupsigninmobileapp.UserBean;
+import Beans.UserBean;
 import activities.signupsigninmobileapp.Fragments.UserViewFragment;
 
 public class PasswordChangeActivity extends AppCompatActivity implements View.OnClickListener {

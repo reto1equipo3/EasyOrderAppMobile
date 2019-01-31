@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import activities.signupsigninmobileapp.R;
-import activities.signupsigninmobileapp.UserBean;
+import Beans.UserBean;
 import activities.signupsigninmobileapp.Fragments.UserViewFragment;
 
 public class EditUserActivity extends AppCompatActivity implements View.OnClickListener {

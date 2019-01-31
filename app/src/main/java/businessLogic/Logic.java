@@ -5,7 +5,7 @@
  */
 package businessLogic;
 
-import activities.signupsigninmobileapp.UserBean;
+import Beans.UserBean;
 import exceptions.BadPasswordException;
 import exceptions.DatabaseException;
 import exceptions.EmailNotUniqueException;

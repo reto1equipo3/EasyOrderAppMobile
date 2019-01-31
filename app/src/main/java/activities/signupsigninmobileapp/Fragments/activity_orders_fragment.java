@@ -2,7 +2,6 @@ package activities.signupsigninmobileapp.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,7 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import Beans.Pedido;
 import activities.signupsigninmobileapp.Activities.activity_new_order;
 import activities.signupsigninmobileapp.R;
 
@@ -31,7 +35,7 @@ public class activity_orders_fragment extends Fragment implements View.OnClickLi
     private static final String ARG_PARAM2 = "param2";
 
     private Button btnAdd;
-    private TableLayout tableLayout;
+    private TableLayout tableOrders;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -77,8 +81,49 @@ public class activity_orders_fragment extends Fragment implements View.OnClickLi
         View view = inflater.inflate(R.layout.fragment_activity_orders, container, false);
 
         btnAdd = view.findViewById(R.id.btnAdd);
-        tableLayout = view.findViewById(R.id.tableLayout);
+        tableOrders = view.findViewById(R.id.tableOrders);
         btnAdd.setOnClickListener(this);
+
+
+        ArrayList<Pedido> productos = new ArrayList<>();
+
+        for(int i=0; i<productos.size(); i++) {
+            //Crear linea tabla
+            TableRow oTableRow = new TableRow(this.getContext());
+            oTableRow.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
+            oTableRow.setPadding(20, 10, 20, 10);
+
+            //Crear TextView numero pedido
+            TextView oProductNumber = new TextView(this.getContext());
+            oProductNumber.setText("");
+            oProductNumber.setLayoutParams(new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+            oProductNumber.setPadding(3, 0, 3, 0);
+
+            //Crear TextView nombre
+            TextView oName = new TextView(this.getContext());
+            oName.setText("");
+            oName.setLayoutParams(new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+            oName.setPadding(3, 0, 3, 0);
+
+            //Crear TextView fecha
+            TextView oDate = new TextView(this.getContext());
+            oDate.setText("");
+            oDate.setLayoutParams(new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+            oDate.setPadding(3, 0, 3, 0);
+
+            //Crear TextView precio
+            TextView oPrice = new TextView(this.getContext());
+            oPrice.setText("");
+            oPrice.setLayoutParams(new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+            oPrice.setPadding(3, 0, 3, 0);
+
+            oTableRow.addView(oProductNumber);
+            oTableRow.addView(oName);
+            oTableRow.addView(oDate);
+            oTableRow.addView(oPrice);
+
+            tableOrders.addView(oTableRow);
+        }
 
         return view;
     }

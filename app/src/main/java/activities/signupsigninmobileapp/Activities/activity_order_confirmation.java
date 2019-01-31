@@ -4,24 +4,20 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
-import activities.signupsigninmobileapp.Fragments.UserViewFragment;
+import java.util.ArrayList;
+
+import Beans.Pedido;
 import activities.signupsigninmobileapp.Fragments.activity_orders_fragment;
 import activities.signupsigninmobileapp.R;
 
@@ -40,10 +36,44 @@ public class activity_order_confirmation extends AppCompatActivity implements Vi
         //Ventana siempre en vertical
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 
+        tableOrder.findViewById(R.id.tableOrder);
         btnCancel = findViewById(R.id.btnCancel);
         btnCancel.setOnClickListener(this);
         btnAccept = findViewById(R.id.btnAccept);
         btnAccept.setOnClickListener(this);
+
+        ArrayList<Pedido> productos = new ArrayList<>();
+
+        for(int i=0; i<productos.size(); i++){
+            //Crear linea tabla
+            TableRow oTableRow = new TableRow(this);
+            oTableRow.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
+            oTableRow.setPadding(20, 10, 20, 10);
+
+            //Crear TextView producto
+            TextView oProducto = new TextView(this);
+            oProducto.setText("");
+            oProducto.setLayoutParams(new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+            oProducto.setPadding(3,0,3,0);
+
+            //Crear TextView cantidad
+            TextView oCantidad = new TextView(this);
+            oCantidad.setText("");
+            oCantidad.setLayoutParams(new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+            oCantidad.setPadding(3,0,3,0);
+
+            //Crear TextView precio
+            TextView oPrecio = new TextView(this);
+            oPrecio.setText("");
+            oPrecio.setLayoutParams(new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+            oPrecio.setPadding(3,0,3,0);
+
+            oTableRow.addView(oProducto);
+            oTableRow.addView(oCantidad);
+            oTableRow.addView(oPrecio);
+
+            tableOrder.addView(oTableRow);
+        }
 
     }
 

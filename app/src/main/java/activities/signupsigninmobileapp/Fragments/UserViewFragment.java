@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import activities.signupsigninmobileapp.R;
-import activities.signupsigninmobileapp.UserBean;
+import Beans.UserBean;
 
 
 /**
