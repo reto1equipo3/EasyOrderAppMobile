@@ -15,6 +15,11 @@ import activities.signupsigninmobileapp.R;
 import Beans.UserBean;
 import activities.signupsigninmobileapp.Fragments.UserViewFragment;
 
+/**
+ * This is the PasswordChangeActivity. in this activity we change our password.
+ *
+ * @author Gaizka
+ */
 public class PasswordChangeActivity extends AppCompatActivity implements View.OnClickListener {
 
     protected static final Logger LOGGER = Logger.getLogger("ui.controllers");

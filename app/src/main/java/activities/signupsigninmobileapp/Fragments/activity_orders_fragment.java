@@ -27,6 +27,8 @@ import activities.signupsigninmobileapp.R;
  * to handle interaction events.
  * Use the {@link activity_orders_fragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ * @author Igor y Gaizka
  */
 public class activity_orders_fragment extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
@@ -34,7 +36,7 @@ public class activity_orders_fragment extends Fragment implements View.OnClickLi
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private Button btnAdd;
+    private Button btnNuevoPedido;
     private TableLayout tableOrders;
 
     // TODO: Rename and change types of parameters
@@ -65,6 +67,10 @@ public class activity_orders_fragment extends Fragment implements View.OnClickLi
         return fragment;
     }
 
+    /**
+     * Method to display the activity
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,15 +80,19 @@ public class activity_orders_fragment extends Fragment implements View.OnClickLi
          }
     }
 
+    /**
+     * Method to display the activity
+     * @param savedInstanceState
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_activity_orders, container, false);
 
-        btnAdd = view.findViewById(R.id.btnAdd);
+        btnNuevoPedido = view.findViewById(R.id.btnNuevoPedido);
         tableOrders = view.findViewById(R.id.tableOrders);
-        btnAdd.setOnClickListener(this);
+        btnNuevoPedido.setOnClickListener(this);
 
 
         ArrayList<Pedido> productos = new ArrayList<>();
@@ -159,7 +169,7 @@ public class activity_orders_fragment extends Fragment implements View.OnClickLi
      */
     @Override
     public void onClick(View v) {
-        if(btnAdd.isPressed()){
+        if(btnNuevoPedido.isPressed()){
             Intent intent = new Intent(getActivity(), activity_new_order.class);
             startActivity(intent);
         }

@@ -15,6 +15,11 @@ import activities.signupsigninmobileapp.R;
 import Beans.UserBean;
 import activities.signupsigninmobileapp.Fragments.UserViewFragment;
 
+/**
+ * This is the EditUserActivity. in this activity we start session on our app.
+ *
+ * @author Gaizka
+ */
 public class EditUserActivity extends AppCompatActivity implements View.OnClickListener {
 
     protected final int MAX_LENGTH = 255;
@@ -32,6 +37,10 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
     private EditText town;
     private UserBean user;
 
+    /**
+     * Method to display the activity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

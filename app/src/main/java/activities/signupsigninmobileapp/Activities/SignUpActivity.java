@@ -210,7 +210,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
      * @throws IllegalArgumentException The phone number is not valid
      */
     private void validatePhoneNumber(String phoneNumber){
-        String PHONE_PATTERN = "[6]{1}[0-9]{8}";
+        String PHONE_PATTERN = "[6][0-9]{8}";
         Pattern pattern = Pattern.compile(PHONE_PATTERN);
 
         if(!pattern.matcher(phoneNumber).matches() || phoneNumber.trim().length() > 9){
@@ -226,7 +226,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
      * @throws IllegalArgumentException The postal code is not valid
      */
     private void validatePostalCode(String postalCode){
-        String CODE_PATTERN = "[4]{1}[0-9]{4}";
+        String CODE_PATTERN = "[4][0-9]{4}";
         Pattern pattern = Pattern.compile(CODE_PATTERN);
 
         if(!pattern.matcher(postalCode).matches() || postalCode.trim().length() > 5){

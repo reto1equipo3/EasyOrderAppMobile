@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.PasswordChangeActivity"></activity>
+        <activity android:name=".Activities.PasswordChangeActivity" />
         <activity android:name=".Activities.EditUserActivity" />
         <activity android:name=".Activities.RecoverPasswordActivity" />
         <activity
@@ -35,7 +35,7 @@
             android:name=".Activities.UserViewActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".Activities.activity_new_order" />
-        <activity android:name=".Activities.activity_order_confirmation" />
+        <activity android:name=".Activities.OrderConfirmationActivity"></activity>
     </application>
 
 </manifest>

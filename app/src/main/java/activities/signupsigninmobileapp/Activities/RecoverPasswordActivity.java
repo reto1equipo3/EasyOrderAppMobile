@@ -16,6 +16,11 @@ import java.util.regex.Pattern;
 
 import activities.signupsigninmobileapp.R;
 
+/**
+ * This is the RecoverPasswordActivity. In this activity we recover our password.
+ *
+ * @author Gaizka
+ */
 public class RecoverPasswordActivity extends AppCompatActivity implements View.OnClickListener {
 
     protected static final Logger LOGGER = Logger.getLogger("ui.controllers");
@@ -23,6 +28,10 @@ public class RecoverPasswordActivity extends AppCompatActivity implements View.O
     private EditText eTxtLogin;
     private Button btnRecoverPwd;
 
+    /**
+     * Method to display the activity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +46,11 @@ public class RecoverPasswordActivity extends AppCompatActivity implements View.O
 
     }
 
+    /**
+     * Called when a view has been clicked.
+     *
+     * @param v The view that was clicked.
+     */
     @Override
     public void onClick(View v) {
         Boolean isValid = true;

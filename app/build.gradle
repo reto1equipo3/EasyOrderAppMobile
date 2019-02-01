@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "activities.signupsigninmobileapp"
-        minSdkVersion 21
+        minSdkVersion 28
         multiDexEnabled true
         targetSdkVersion 28
         versionCode 1
@@ -18,8 +18,11 @@ android {
         }
     }
     compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '28.0.3'
+    productFlavors {
     }
 }
 

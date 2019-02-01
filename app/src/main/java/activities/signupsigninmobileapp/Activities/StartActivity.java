@@ -10,10 +10,19 @@ import android.widget.ImageView;
 
 import activities.signupsigninmobileapp.R;
 
+/**
+ * This is the StartActivity.
+ *
+ * @author Igor
+ */
 public class StartActivity extends Activity {
 
     AnimationDrawable animation;
 
+    /**
+     * Method to display the activity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +41,6 @@ public class StartActivity extends Activity {
                 startActivity(intent);
                 finish();
             }
-        },5000);
+        },3000);
     }
 }
