@@ -29,7 +29,7 @@ public class PasswordChangeActivity extends AppCompatActivity implements View.On
     private EditText currentPassword;
     private EditText newPassword;
     private EditText confirmNewPassword;
-    private Button btnSave;
+    private Button btnSavePwd;
     private UserBean user;
 
     @Override
@@ -43,6 +43,8 @@ public class PasswordChangeActivity extends AppCompatActivity implements View.On
         currentPassword = findViewById(R.id.eTxtCurrentPassword);
         newPassword = findViewById(R.id.eTxtNewPassword);
         confirmNewPassword = findViewById(R.id.eTxtConfirmNewPassword);
+        btnSavePwd.findViewById(R.id.btnSavePwd);
+        btnSavePwd.setOnClickListener(this);
 
     }
 
@@ -55,7 +57,7 @@ public class PasswordChangeActivity extends AppCompatActivity implements View.On
     public void onClick(View v) {
 
         Boolean validFields = true;
-        if(btnSave.isPressed()){
+        if(btnSavePwd.isPressed()){
             /*try{
                 validatePassword(newPassword.getText().toString(), confirmNewPassword.getText().toString());
             }catch(IllegalArgumentException e){

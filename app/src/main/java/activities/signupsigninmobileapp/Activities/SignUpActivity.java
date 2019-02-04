@@ -350,7 +350,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             Intent browser= new Intent(Intent.ACTION_VIEW, Uri.parse("/PruebaTermsOfUse.pdf"));
             startActivity(browser);
         }else if(btnSignUp.isPressed()){
-           SignUp();
+           Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+           startActivity(intent);
         }
 
     }

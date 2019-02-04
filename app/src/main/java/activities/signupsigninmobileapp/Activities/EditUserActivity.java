@@ -1,6 +1,7 @@
 package activities.signupsigninmobileapp.Activities;
 
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.DialogInterface;
@@ -20,7 +21,7 @@ import activities.signupsigninmobileapp.Fragments.UserViewFragment;
  *
  * @author Gaizka
  */
-public class EditUserActivity extends AppCompatActivity implements View.OnClickListener {
+public class EditUserActivity extends AppCompatActivity implements View.OnClickListener, UserViewFragment.OnFragmentInteractionListener {
 
     protected final int MAX_LENGTH = 255;
     protected final int MAX_LENGTH_FULLNAME = 50;
@@ -56,7 +57,8 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         postalCode = findViewById(R.id.eTxtPostalCodeEdit);
         town = findViewById(R.id.eTxtTownEdit);
         address = findViewById(R.id.eTxtAddressEdit);
-        btnSave = findViewById(R.id.btnSaveEdit);
+        btnSave = findViewById(R.id.btnSavePwd);
+        btnSave.setOnClickListener(this);
 
     }
 
@@ -117,6 +119,11 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
                 dialog.show();
             }
         }
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
     //TODO Validar todos los datos metidos por el usuario antes de guardar los cambios

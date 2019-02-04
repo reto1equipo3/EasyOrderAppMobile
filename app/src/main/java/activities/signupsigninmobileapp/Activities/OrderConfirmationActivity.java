@@ -4,10 +4,8 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.database.Observable;
-import android.os.CountDownTimer;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -17,17 +15,14 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import java.util.ArrayList;
+
 import java.util.Calendar;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import Beans.Cliente;
 import Beans.Pedido;
+import activities.signupsigninmobileapp.R;
 import businessLogic.PedidoLogic;
 import businessLogic.PedidoLogicFactory;
-
-import activities.signupsigninmobileapp.R;
 
 /**
  * This is the OrderConfirmationActivity. in this activity we confirm the buy order.
@@ -113,7 +108,7 @@ public class OrderConfirmationActivity extends AppCompatActivity implements View
         //ArrayList<Pedido> pedidos = new ArrayList<>();
 
        // for(int i=0; i<pedidos.size(); i++) {
-        for(int i=0; i<5; i++) {
+        //for(int i=0; i<5; i++) {
             //Crear la linea de la tabla
             TableRow oTableRow = new TableRow(this);
             oTableRow.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
@@ -146,7 +141,7 @@ public class OrderConfirmationActivity extends AppCompatActivity implements View
 
             //Añadir la linea a la tabla
             tabla_pedidos.addView(oTableRow);
-        }
+        //}
 
 
 

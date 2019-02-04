@@ -1,18 +1,14 @@
 package activities.signupsigninmobileapp.Activities;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import java.nio.charset.Charset;
-import java.util.Random;
-import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Pattern;
 
 import activities.signupsigninmobileapp.R;
 
@@ -60,7 +56,8 @@ public class RecoverPasswordActivity extends AppCompatActivity implements View.O
 
             if(isValid){
 
-                //TODO Generar contraseña aleatoria de como máximo 10 caracteres en el lado servidor y que se envíe por correo
+                Intent intent = new Intent(RecoverPasswordActivity.this, SignInActivity.class);
+                startActivity(intent);
 
             }
 
