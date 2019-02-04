@@ -1,26 +1,26 @@
 package activities.signupsigninmobileapp.Activities;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.logging.Logger;
 
-import activities.signupsigninmobileapp.R;
 import Beans.UserBean;
 import activities.signupsigninmobileapp.Fragments.UserViewFragment;
+import activities.signupsigninmobileapp.R;
 
 /**
  * This is the PasswordChangeActivity. in this activity we change our password.
  *
  * @author Gaizka
  */
-public class PasswordChangeActivity extends AppCompatActivity implements View.OnClickListener {
+public class PasswordChangeActivity extends AppCompatActivity implements View.OnClickListener, UserViewFragment.OnFragmentInteractionListener {
 
     protected static final Logger LOGGER = Logger.getLogger("ui.controllers");
 
@@ -43,7 +43,7 @@ public class PasswordChangeActivity extends AppCompatActivity implements View.On
         currentPassword = findViewById(R.id.eTxtCurrentPassword);
         newPassword = findViewById(R.id.eTxtNewPassword);
         confirmNewPassword = findViewById(R.id.eTxtConfirmNewPassword);
-        btnSavePwd.findViewById(R.id.btnSavePwd);
+        btnSavePwd = findViewById(R.id.btnSavePwd);
         btnSavePwd.setOnClickListener(this);
 
     }
@@ -56,7 +56,6 @@ public class PasswordChangeActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View v) {
 
-        Boolean validFields = true;
         if(btnSavePwd.isPressed()){
             /*try{
                 validatePassword(newPassword.getText().toString(), confirmNewPassword.getText().toString());
@@ -79,18 +78,15 @@ public class PasswordChangeActivity extends AppCompatActivity implements View.On
 
             //TODO Cambiar esto
 
-            FragmentManager fragmentManager;
-            fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction;
-            fragmentTransaction = fragmentManager.beginTransaction();
-
-            UserViewFragment userViewFragment = new UserViewFragment();
-            fragmentTransaction.replace(R.id.fragment, userViewFragment);
-
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+            Intent intent = new Intent(PasswordChangeActivity.this, UserViewActivity.class);
+            startActivity(intent);
 
         }
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
     }
 }

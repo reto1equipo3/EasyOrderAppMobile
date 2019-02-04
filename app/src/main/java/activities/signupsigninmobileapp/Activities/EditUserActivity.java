@@ -1,20 +1,19 @@
 package activities.signupsigninmobileapp.Activities;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.content.DialogInterface;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import activities.signupsigninmobileapp.R;
 import Beans.UserBean;
 import activities.signupsigninmobileapp.Fragments.UserViewFragment;
+import activities.signupsigninmobileapp.R;
 
 /**
  * This is the EditUserActivity. in this activity we start session on our app.
@@ -28,7 +27,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
     protected final int MAX_LENGTH_EMAIL = 50;
     protected final int MAX_LENGTH_LOGIN = 20;
 
-    private Button btnSave;
+    private Button btnSavePwd;
     private EditText login;
     private EditText email;
     private EditText name;
@@ -57,8 +56,8 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         postalCode = findViewById(R.id.eTxtPostalCodeEdit);
         town = findViewById(R.id.eTxtTownEdit);
         address = findViewById(R.id.eTxtAddressEdit);
-        btnSave = findViewById(R.id.btnSavePwd);
-        btnSave.setOnClickListener(this);
+        btnSavePwd = findViewById(R.id.btnSavePwd);
+        btnSavePwd.setOnClickListener(this);
 
     }
 
@@ -70,7 +69,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
 
-        if(btnSave.isPressed()) {
+        if(btnSavePwd.isPressed()) {
 
             Boolean validFields = true;
 
@@ -96,16 +95,8 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
 
                         //TODO Actualizar los datos del usuario
 
-                        FragmentManager fragmentManager;
-                        fragmentManager = getSupportFragmentManager();
-                        FragmentTransaction fragmentTransaction;
-                        fragmentTransaction = fragmentManager.beginTransaction();
-
-                        UserViewFragment userViewFragment = new UserViewFragment();
-                        fragmentTransaction.replace(R.id.fragment, userViewFragment);
-
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
+                        Intent intent = new Intent(EditUserActivity.this, UserViewActivity.class);
+                        startActivity(intent);
                     }
                 });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
